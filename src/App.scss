@@ -1,0 +1,163 @@
+@import "./var.scss";
+html, body{
+    font-family: var(--sans);
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    width: 90%;
+    max-width:1111px;
+    margin-inline:auto;
+}
+.main-heading{
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 48px;
+}
+
+
+.medium-heading{
+    font-size:40px;
+    line-height: 48px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.small-heading{
+    font-size:20px;
+    line-height: 26px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+p,ul,input,li{
+    font-size: 1rem;
+    font-weight: normal;
+    line-height:26px;
+}
+a{
+    text-decoration:none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    &.btn-call{
+        display:block;
+        text-transform: uppercase;
+        padding: 1rem 2rem;
+        width: fit-content;
+        color: var(--clr-txt-main);
+        transition: all .3s;
+    }
+    &.--on-dark{
+        background-color:var(--clr-light-main);
+        color: var(--clr-dark-main);
+        &:hover{
+            background-color:var(--clr-light-sub)
+        }
+    }
+    &.--on-light{
+        background-color: var(--clr-call-main);
+        color: var(--clr-light-main);
+        &:hover{
+            background-color: var(--clr-call-sub);
+        }
+    }
+    &.btn-icon{
+        color: var(--clr-light-main);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        svg{
+            margin-inline-start: 1rem;
+        }
+    }
+}
+
+.radius{
+    border-radius: 8px;
+}
+.grid-container{
+    display:grid;
+    gap: 2rem;
+    @include desktop{
+        &:has(:nth-last-child(3)){
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows:1fr 1fr;
+            :first-child{
+                grid-column:1;
+                grid-row: 1 / span 2;
+            }
+        }
+    }
+}
+.card-container{
+    min-width: 327px;
+    min-height: 250px;
+    background-color: var(--clr-light-third);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:var(--clr-light-main);
+    transition: all .3s;
+    cursor: pointer;
+    &:hover{
+        background-color:var(--clr-call-sub);
+    }
+    &.bgImg{
+        position:relative;
+        overflow: hidden;
+        &::before{
+            position:absolute;
+            content:"";
+            inset: 0;
+            background-color: var(--clr-light-third);
+            opacity: 0.6;
+            z-index: 0;
+            transition: all .3s;
+            @include desktop{
+                opacity: 0;
+            }
+        }
+        & > *{
+            z-index: 10;
+        }
+        &:hover{
+            &::before{
+                background-color:var(--clr-call-sub);
+                @include desktop{
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+    
+}
+.call-container{
+    .wrapper{
+        background-color: var(--clr-call-main);
+        color:var(--clr-light-main);
+        text-align:center;
+        border-radius: 1rem;
+        padding-block: 63px;
+        padding-inline:25px;
+        background-image:url("./assets/shared/desktop/bg-pattern-call-to-action.svg");
+        background-size: 1490px;
+        background-position:center;
+        p{
+            margin-block: 38px;
+        }
+        a{
+            padding-block: 21px;
+            margin-inline:auto;
+        }
+    }
+}

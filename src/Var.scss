@@ -1,0 +1,31 @@
+$clrs:(
+    call:(
+        main: #E7816B,
+        sub: #FFAD98
+    ),
+    dark:(
+        main: #1D1C1E,
+        sub: #333136
+    ),
+    light:(
+        main:#ffffff,
+        sub:#f1f2f5,
+        third:#979797
+    )
+);
+
+@mixin tablet{
+    @media screen and (min-width:768px){@content;}
+}
+@mixin desktop{
+    @media screen and (min-width:928px){@content;}
+}
+
+:root{
+    @each $clr, $vls in $clrs{
+        @each $subclr, $subvl in $vls{
+            --clr-#{$clr}-#{$subclr}: #{$subvl};
+        }
+    }
+    --sans: "Jost", sans-serif;
+}

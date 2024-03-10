@@ -1,0 +1,193 @@
+:root {
+  --clr-call-main: #E7816B;
+  --clr-call-sub: #FFAD98;
+  --clr-dark-main: #1D1C1E;
+  --clr-dark-sub: #333136;
+  --clr-light-main: #ffffff;
+  --clr-light-sub: #f1f2f5;
+  --clr-light-third: #979797;
+  --sans: "Jost", sans-serif;
+}
+
+html, body {
+  font-family: var(--sans);
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1111px;
+  margin-inline: auto;
+}
+
+.main-heading {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 48px;
+}
+
+.medium-heading {
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.small-heading {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+p, ul, input, li {
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 26px;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+a.btn-call {
+  display: block;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: var(--clr-txt-main);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+a.--on-dark {
+  background-color: var(--clr-light-main);
+  color: var(--clr-dark-main);
+}
+a.--on-dark:hover {
+  background-color: var(--clr-light-sub);
+}
+a.--on-light {
+  background-color: var(--clr-call-main);
+  color: var(--clr-light-main);
+}
+a.--on-light:hover {
+  background-color: var(--clr-call-sub);
+}
+a.btn-icon {
+  color: var(--clr-light-main);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+a.btn-icon svg {
+  -webkit-margin-start: 1rem;
+          margin-inline-start: 1rem;
+}
+
+.radius {
+  border-radius: 8px;
+}
+
+.grid-container {
+  display: grid;
+  gap: 2rem;
+}
+@media screen and (min-width: 928px) {
+  .grid-container:has(:nth-last-child(3)) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .grid-container:has(:nth-last-child(3)) :first-child {
+    grid-column: 1;
+    grid-row: 1/span 2;
+  }
+}
+
+.card-container {
+  min-width: 327px;
+  min-height: 250px;
+  background-color: var(--clr-light-third);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--clr-light-main);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.card-container:hover {
+  background-color: var(--clr-call-sub);
+}
+.card-container.bgImg {
+  position: relative;
+  overflow: hidden;
+}
+.card-container.bgImg::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: var(--clr-light-third);
+  opacity: 0.6;
+  z-index: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+@media screen and (min-width: 928px) {
+  .card-container.bgImg::before {
+    opacity: 0;
+  }
+}
+.card-container.bgImg > * {
+  z-index: 10;
+}
+.card-container.bgImg:hover::before {
+  background-color: var(--clr-call-sub);
+}
+@media screen and (min-width: 928px) {
+  .card-container.bgImg:hover::before {
+    opacity: 0.6;
+  }
+}
+
+.call-container .wrapper {
+  background-color: var(--clr-call-main);
+  color: var(--clr-light-main);
+  text-align: center;
+  border-radius: 1rem;
+  padding-block: 63px;
+  padding-inline: 25px;
+  background-image: url("./assets/shared/desktop/bg-pattern-call-to-action.svg");
+  background-size: 1490px;
+  background-position: center;
+}
+.call-container .wrapper p {
+  margin-block: 38px;
+}
+.call-container .wrapper a {
+  padding-block: 21px;
+  margin-inline: auto;
+}/*# sourceMappingURL=App.css.map */
