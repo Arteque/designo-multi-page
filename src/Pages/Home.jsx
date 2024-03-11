@@ -20,7 +20,7 @@ function Home() {
             </Button>
         </Section>
         <Section id="about-section">
-          <Grid>
+          <Grid gridType="grid">
             <Card Heading="Web design" linkText="view projects" link="webdesign" bgImg="./assets/home/mobile/image-web-design.jpg"/>
             <Card Heading="App design" linkText="view projects" link="appdesign"/>
             <Card Heading="Graphic design" linkText="view projects" link="graphicdesign"/>
@@ -28,7 +28,7 @@ function Home() {
         </Section>
 
         <Section id="quality-section">
-          <Grid classname="-inline">
+          <Grid gridType="flex">
             <Card 
             cardtype="details-card" 
             detailsCardHeader="./assets/home/desktop/illustration-passionate.svg"
