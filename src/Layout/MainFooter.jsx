@@ -18,7 +18,7 @@ function MainFooter() {
         </div>
         <Footer>
             <Wrapper>
-
+                
             </Wrapper>
         </Footer>
     </>
