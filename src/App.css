@@ -117,8 +117,9 @@ section {
     grid-row: 1/span 2;
   }
   .grid-container.-inline {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
