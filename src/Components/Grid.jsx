@@ -1,6 +1,6 @@
-function Grid({children}) {
+function Grid({children, classname}) {
   return (
-    <div className="grid-container">
+    <div className={`grid-container ${classname}`}>
         {children}
     </div>
   )

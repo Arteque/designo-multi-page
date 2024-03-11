@@ -76,7 +76,9 @@ a{
         }
     }
 }
-
+section{
+    margin-block-end: 120px;
+}
 .radius{
     border-radius: 8px;
 }
@@ -84,7 +86,7 @@ a{
     display:grid;
     gap: 2rem;
     @include desktop{
-        &:has(:nth-last-child(3)){
+        &:has(:nth-last-child(3)):not(.-inline){
             grid-template-columns: 1fr 1fr;
             grid-template-rows:1fr 1fr;
             :first-child{
@@ -92,12 +94,15 @@ a{
                 grid-row: 1 / span 2;
             }
         }
+        &.-inline{
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows:1fr; 
+        }
     }
 }
 .card-container{
     min-width: 327px;
     min-height: 250px;
-    background-color: var(--clr-light-third);
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -106,40 +111,46 @@ a{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    color:var(--clr-light-main);
     transition: all .3s;
-    cursor: pointer;
-    &:hover{
-        background-color:var(--clr-call-sub);
-    }
-    &.bgImg{
-        position:relative;
-        overflow: hidden;
-        &::before{
-            position:absolute;
-            content:"";
-            inset: 0;
-            background-color: var(--clr-light-third);
-            opacity: 0.6;
-            z-index: 0;
-            transition: all .3s;
-            @include desktop{
-                opacity: 0;
-            }
-        }
-        & > *{
-            z-index: 10;
-        }
+    &:not(.details-card){
+        background-color: var(--clr-light-third);
+        color:var(--clr-light-main);
+        cursor: pointer;
         &:hover{
+            background-color:var(--clr-call-sub);
+        }
+        &.bgImg{
+            position:relative;
+            overflow: hidden;
             &::before{
-                background-color:var(--clr-call-sub);
+                position:absolute;
+                content:"";
+                inset: 0;
+                background-color: var(--clr-light-third);
+                opacity: 0.6;
+                z-index: 0;
+                transition: all .3s;
                 @include desktop{
-                    opacity: 0.6;
+                    opacity: 0;
+                }
+            }
+            & > *{
+                z-index: 10;
+            }
+            &:hover{
+                &::before{
+                    background-color:var(--clr-call-sub);
+                    @include desktop{
+                        opacity: 0.6;
+                    }
                 }
             }
         }
     }
     
+    &.details-card{
+        text-align: center;
+    }
 }
 .call-container{
     .wrapper{

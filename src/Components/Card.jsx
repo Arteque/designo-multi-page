@@ -16,7 +16,7 @@ useEffect(() => {
         <>
             <div className={`card-container ${cardtype}`}>
                 <div className="card-header">
-                    {detailsCardHeader}
+                    <img src={detailsCardHeader} alt={detailsCardBodyHeading} />
                 </div>
                 <div className="card-body">
                     <SmallHeading>

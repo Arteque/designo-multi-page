@@ -94,6 +94,11 @@ a.btn-icon svg {
           margin-inline-start: 1rem;
 }
 
+section {
+  -webkit-margin-after: 120px;
+          margin-block-end: 120px;
+}
+
 .radius {
   border-radius: 8px;
 }
@@ -102,21 +107,24 @@ a.btn-icon svg {
   display: grid;
   gap: 2rem;
 }
-@media screen and (min-width: 928px) {
-  .grid-container:has(:nth-last-child(3)) {
+@media screen and (min-width: 1111px) {
+  .grid-container:has(:nth-last-child(3)):not(.-inline) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
   }
-  .grid-container:has(:nth-last-child(3)) :first-child {
+  .grid-container:has(:nth-last-child(3)):not(.-inline) :first-child {
     grid-column: 1;
     grid-row: 1/span 2;
+  }
+  .grid-container.-inline {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
   }
 }
 
 .card-container {
   min-width: 327px;
   min-height: 250px;
-  background-color: var(--clr-light-third);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -134,19 +142,22 @@ a.btn-icon svg {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  color: var(--clr-light-main);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+.card-container:not(.details-card) {
+  background-color: var(--clr-light-third);
+  color: var(--clr-light-main);
   cursor: pointer;
 }
-.card-container:hover {
+.card-container:not(.details-card):hover {
   background-color: var(--clr-call-sub);
 }
-.card-container.bgImg {
+.card-container:not(.details-card).bgImg {
   position: relative;
   overflow: hidden;
 }
-.card-container.bgImg::before {
+.card-container:not(.details-card).bgImg::before {
   position: absolute;
   content: "";
   inset: 0;
@@ -156,21 +167,24 @@ a.btn-icon svg {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-@media screen and (min-width: 928px) {
-  .card-container.bgImg::before {
+@media screen and (min-width: 1111px) {
+  .card-container:not(.details-card).bgImg::before {
     opacity: 0;
   }
 }
-.card-container.bgImg > * {
+.card-container:not(.details-card).bgImg > * {
   z-index: 10;
 }
-.card-container.bgImg:hover::before {
+.card-container:not(.details-card).bgImg:hover::before {
   background-color: var(--clr-call-sub);
 }
-@media screen and (min-width: 928px) {
-  .card-container.bgImg:hover::before {
+@media screen and (min-width: 1111px) {
+  .card-container:not(.details-card).bgImg:hover::before {
     opacity: 0.6;
   }
+}
+.card-container.details-card {
+  text-align: center;
 }
 
 .call-container .wrapper {

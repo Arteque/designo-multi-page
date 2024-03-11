@@ -18,7 +18,7 @@ $clrs:(
     @media screen and (min-width:768px){@content;}
 }
 @mixin desktop{
-    @media screen and (min-width:928px){@content;}
+    @media screen and (min-width:1111px){@content;}
 }
 
 :root{
