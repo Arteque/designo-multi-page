@@ -116,10 +116,24 @@ section {
     grid-column: 1;
     grid-row: 1/span 2;
   }
-  .grid-container.-inline {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+}
+
+.grid-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+@media screen and (min-width: 1111px) {
+  .grid-flex {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
   }
 }
 
@@ -205,4 +219,49 @@ section {
 .call-container .wrapper a {
   padding-block: 21px;
   margin-inline: auto;
+}
+
+header {
+  position: relative;
+  z-index: 999;
+}
+header .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-block: 3rem;
+}
+header .wrapper .logo-container {
+  width: 200px;
+}
+header .wrapper .logo-container img {
+  width: 100%;
+  display: block;
+}
+header .wrapper .burger {
+  cursor: pointer;
+}
+
+nav {
+  position: absolute;
+  background-color: var(--clr-dark-main);
+  left: 0;
+  top: 100%;
+  width: 100%;
+  padding-block: 50px;
+}
+nav a {
+  color: var(--clr-light-main);
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 300;
+  display: block;
+  padding: 1rem 2rem;
+  margin-block: 1rem;
 }/*# sourceMappingURL=App.css.map */

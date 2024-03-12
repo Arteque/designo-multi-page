@@ -4,6 +4,8 @@ import MainHeading from '../Components/MainHeading'
 import Button from '../Components/Button'
 import Grid from '../Components/Grid'
 import Card from '../Components/Card'
+import '../Home.css'
+
 
 function Home() {
   return (
@@ -18,9 +20,12 @@ function Home() {
             <Button classname="btn-call --on-dark radius">
               Learn more
             </Button>
+            <figure>
+              <img src="./assets/home/desktop/image-hero-phone.png" alt="Award Wining Custom designs and digital branding" />
+            </figure>
         </Section>
         <Section id="about-section">
-          <Grid gridType="grid">
+          <Grid >
             <Card Heading="Web design" linkText="view projects" link="webdesign" bgImg="./assets/home/mobile/image-web-design.jpg"/>
             <Card Heading="App design" linkText="view projects" link="appdesign"/>
             <Card Heading="Graphic design" linkText="view projects" link="graphicdesign"/>
@@ -28,7 +33,7 @@ function Home() {
         </Section>
 
         <Section id="quality-section">
-          <Grid gridType="flex">
+          <Grid gridFlex={true}>
             <Card 
             cardtype="details-card" 
             detailsCardHeader="./assets/home/desktop/illustration-passionate.svg"
