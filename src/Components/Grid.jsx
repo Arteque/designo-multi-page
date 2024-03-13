@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import {PropTypes, defaultProps} from 'prop-types'
+import {PropTypes} from 'prop-types'
 function Grid({children, grid, gridFlex }) {
 
 

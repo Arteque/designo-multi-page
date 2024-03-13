@@ -94,7 +94,7 @@ a.btn-icon svg {
           margin-inline-start: 1rem;
 }
 
-section {
+section:not(#quality-section) {
   -webkit-margin-after: 120px;
           margin-block-end: 120px;
 }
@@ -202,25 +202,6 @@ section {
   text-align: center;
 }
 
-.call-container .wrapper {
-  background-color: var(--clr-call-main);
-  color: var(--clr-light-main);
-  text-align: center;
-  border-radius: 1rem;
-  padding-block: 63px;
-  padding-inline: 25px;
-  background-image: url("./assets/shared/desktop/bg-pattern-call-to-action.svg");
-  background-size: 1490px;
-  background-position: center;
-}
-.call-container .wrapper p {
-  margin-block: 38px;
-}
-.call-container .wrapper a {
-  padding-block: 21px;
-  margin-inline: auto;
-}
-
 header {
   position: relative;
   z-index: 999;
@@ -247,12 +228,38 @@ header .wrapper .logo-container img {
 header .wrapper .burger {
   cursor: pointer;
 }
+header .wrapper .burger path {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+header .wrapper .burger.open path {
+  position: relative;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+header .wrapper .burger.open path:nth-of-type(1) {
+  -webkit-transform: translate(-5px, 6px) rotate(45deg);
+          transform: translate(-5px, 6px) rotate(45deg);
+}
+header .wrapper .burger.open path:nth-of-type(2) {
+  opacity: 0;
+  -webkit-transform: translatex(-15px);
+          transform: translatex(-15px);
+}
+header .wrapper .burger.open path:nth-of-type(3) {
+  -webkit-transform: translate(-6px, -5px) rotate(-45deg);
+          transform: translate(-6px, -5px) rotate(-45deg);
+}
+@media screen and (min-width: 768px) {
+  header .wrapper .burger {
+    display: none;
+  }
+}
 
 nav {
   position: absolute;
   background-color: var(--clr-dark-main);
   left: 0;
-  top: 100%;
   width: 100%;
   padding-block: 50px;
 }
@@ -264,4 +271,83 @@ nav a {
   display: block;
   padding: 1rem 2rem;
   margin-block: 1rem;
+}
+
+nav:not(footer nav) {
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  top: 118%;
+}
+nav:not(footer nav).open {
+  opacity: 1;
+  top: 100%;
+  pointer-events: auto;
+}
+
+.call-container {
+  position: relative;
+  top: 160px;
+}
+.call-container .wrapper {
+  background-color: var(--clr-call-main);
+  color: var(--clr-light-main);
+  text-align: center;
+  border-radius: 1rem;
+  padding-block: 63px;
+  padding-inline: 25px;
+  background-image: url("./assets/shared/desktop/bg-pattern-call-to-action.svg");
+  background-size: 1490px;
+  background-position: center;
+}
+.call-container .wrapper p {
+  margin-block: 38px;
+}
+.call-container .wrapper a {
+  padding-block: 21px;
+  margin-inline: auto;
+}
+
+footer {
+  background-color: var(--clr-dark-main);
+  color: var(--clr-light-main);
+  text-align: center;
+  -webkit-padding-before: 250px;
+          padding-block-start: 250px;
+  -webkit-padding-after: 50px;
+          padding-block-end: 50px;
+}
+footer nav {
+  position: relative;
+  padding-block: unset;
+  width: auto;
+  background-color: revert;
+  -webkit-border-before: 1px solid var(--clr-light-third);
+          border-block-start: 1px solid var(--clr-light-third);
+}
+footer nav ul {
+  list-style: none;
+}
+footer nav ul a {
+  font-size: 18px;
+  margin: 0;
+}
+footer .address, footer .contact {
+  color: var(--clr-light-third);
+}
+footer .social ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+}
+footer .social li {
+  list-style: none;
+}
+footer .social li a {
+  color: var(--clr-call-main);
 }/*# sourceMappingURL=App.css.map */

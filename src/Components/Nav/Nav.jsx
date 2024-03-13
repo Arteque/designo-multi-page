@@ -15,7 +15,7 @@ const items = [
     }
 ]
 
-function Nav(){
+function Nav({classname}){
 
     
     const [current, setCurrent] = useState('home')
@@ -24,7 +24,7 @@ function Nav(){
         setCurrent(e)
     }
     
-    return <nav>
+    return <nav className={classname}>
         <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
     </nav>
 }
