@@ -16,17 +16,24 @@ html, body{
     margin-inline:auto;
 }
 .main-heading{
-    font-size: 48px;
+    font-size: 32px;
     font-weight: 500;
     line-height: 48px;
+    margin-block-end:28px;
+    @include tablet{
+        font-size: 48px;
+    }
 }
 
 
 .medium-heading{
-    font-size:40px;
+    font-size:28px;
     line-height: 48px;
     font-weight: 500;
     letter-spacing: 2px;
+    @include tablet{
+        font-size: 40px;
+    }
 }
 
 .small-heading{
@@ -35,11 +42,13 @@ html, body{
     font-weight: 500;
     letter-spacing: 5px;
     text-transform: uppercase;
+    margin-block-end: 1rem;
 }
 p,ul,input,li{
     font-size: 1rem;
     font-weight: normal;
     line-height:26px;
+    margin-block-end: 19px;
 }
 a{
     text-decoration:none;
@@ -154,6 +163,10 @@ section:not(#quality-section){
     
     &.details-card{
         text-align: center;
+        @include tablet{
+            flex-direction:row;
+            text-align: unset;
+        }
     }
 }
 
@@ -230,7 +243,66 @@ nav:not(footer nav){
         top: 100%;
         pointer-events: auto;
     }
+
+    //Tab view port
+    @include tablet{
+        position:relative;
+        opacity: 1;
+        pointer-events: auto;
+        background-color:transparent;
+        width: fit-content;
+        left: unset;
+        top: unset;
+        padding-block: 0;
+        ul{
+            list-style: none;
+            display: flex;
+            a{
+                color: var(--clr-dark-main);
+                font-size: 14px;
+                font-weight: normal;
+                padding: 0;
+                padding-inline-start: 2rem;
+                margin: 0;
+            }
+        }
+    }
+
 }
+
+
+/* Start Page Hero Section*/
+#hero-section{
+    color: var(--clr-light-main);
+    text-align: center;
+    overflow: hidden;
+    .wrapper{
+        display:flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--clr-call-main);
+        border-radius: 10px 10px 0 0;
+        gap: 1rem;
+        padding-block-start: 100px;
+        overflow:hidden;
+        min-height: 80svh;
+        padding-inline: 1.5rem;
+        .main-heading{
+            max-width: 500px;
+        }
+        figure{
+            height: 370px;
+            img{
+                transform:translateY(-11%);
+            }
+        }
+        @include tablet{
+            padding-inline: 107px;
+        }
+    }
+}
+
 .call-container{
     position:relative;
     top: 160px;
@@ -244,8 +316,14 @@ nav:not(footer nav){
         background-image:url("./assets/shared/desktop/bg-pattern-call-to-action.svg");
         background-size: 1490px;
         background-position:center;
+        .medium-heading{
+            max-width: 300px;
+            margin-inline:auto;
+        }
         p{
             margin-block: 38px;
+            max-width: 500px;
+            margin-inline:auto;
         }
         a{
             padding-block: 21px;
@@ -253,12 +331,26 @@ nav:not(footer nav){
         }
     }
 }
+
 footer{
     background-color: var(--clr-dark-main);
     color: var(--clr-light-main);
     text-align: center;
     padding-block-start:250px;
     padding-block-end:50px;
+    .grid-flex{
+        @include tablet{
+            flex-flow:row wrap;
+            align-items: center;
+            justify-content: space-between;
+            .logo-container{
+                width: 30%;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
     nav{
         position:relative;
         padding-block: unset;
@@ -271,6 +363,22 @@ footer{
             a{
                 font-size: 18px;
                 margin: 0;
+            }
+           
+        }
+        @include tablet{
+            flex-grow: 1;
+            border-block-start: unset;
+            margin-inline-start: auto;
+            width: fit-content;
+            ul{
+                display:flex;
+                margin-block-end:unset ;
+                a{
+                    font-size: 14px;
+                    white-space: nowrap;
+                    padding: 1rem 0 1rem 3dvb;
+                }
             }
         }
     }
@@ -289,5 +397,9 @@ footer{
                 color: var(--clr-call-main);
             }
         }
+        @include tablet{
+            align-self:flex-end;
+        }
     }
 }
+
