@@ -21,14 +21,14 @@ export default function MainHeader() {
       <Header>
         <Wrapper>
             <div className="logo-container">
-            <Link to="/home">
+            <Link to="/">
                 <MainLogo logoLocation="header" />
             </Link>
             </div>
             <div onClick={handleNav} className={`burger ${open ? 'open' : ''}`}>
                 <svg width="24" height="20" xmlns="http://www.w3.org/2000/svg">
                   <g fill="#1D1C1E" fillRule="evenodd">
-                    <path d="M0 0h24v4H0zM0"/>
+                    <path d="M0 0h24v4H0z"/>
                     <path d="M0 8h24v4H0z"/>
                     <path d="M0 16h24v4H0z"/>
                   </g>

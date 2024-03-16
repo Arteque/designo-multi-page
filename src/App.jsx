@@ -6,26 +6,27 @@ import Location from "./Pages/Location"
 import Contact from "./Pages/Contact"
 import NotFound from './Pages/NotFound'
 import {
-  BrowserRouter,
+  HashRouter,
   Route,
   Routes
 } from 'react-router-dom'
+import Main from "./Layout/Main"
 
 
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <MainHeader />
         <Routes>
-            <Route path="/home" element={<Home />} />  
+            <Route path="/" element={<Home />} />  
             <Route path="/ourcompany" element={<AboutUs />} />  
             <Route path="/location" element={<Location />} />  
             <Route path="/contact" element={<Contact />} /> 
             <Route path="*" element={<NotFound />} /> 
         </Routes>  
       <MainFooter />
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 

@@ -363,6 +363,16 @@ section {
   overflow: hidden;
 }
 #hero-section .wrapper {
+  padding-inline: 1.5rem;
+  background-color: var(--clr-call-main);
+  border-radius: 10px 10px 0 0;
+  background-image: url("./assets/home/desktop/bg-pattern-hero-home.svg");
+  background-position: center 30vh;
+  background-repeat: no-repeat;
+}
+#hero-section .wrapper .content-container {
+  width: 60%;
+  margin-inline: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -376,29 +386,37 @@ section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: var(--clr-call-main);
-  border-radius: 10px 10px 0 0;
   gap: 1rem;
   -webkit-padding-before: 100px;
           padding-block-start: 100px;
-  overflow: hidden;
-  min-height: 80svh;
-  padding-inline: 1.5rem;
 }
 #hero-section .wrapper .main-heading {
   max-width: 500px;
 }
-#hero-section .wrapper figure {
-  height: 370px;
-  pointer-events: none;
+
+.start-main-content #hero-section .wrapper {
+  min-height: 80svh;
+  overflow: hidden;
+  position: relative;
+  background-image: url("./assets/home/desktop/image-hero-phone.png"), url("./assets/home/desktop/image-hero-phone.png");
+  background-position: center 30vh;
+  background-repeat: no-repeat;
 }
-#hero-section .wrapper figure img {
-  -webkit-transform: translateY(-11%);
-          transform: translateY(-11%);
-}
-@media screen and (min-width: 768px) {
-  #hero-section .wrapper {
-    padding-inline: 107px;
+@media screen and (min-width: 1111px) {
+  .start-main-content #hero-section .wrapper {
+    background-position: 120% 3vh;
+  }
+  .start-main-content #hero-section .wrapper .content-container {
+    margin-inline: unset;
+    -webkit-padding-before: 13rem;
+            padding-block-start: 13rem;
+    width: 60%;
+    z-index: 1;
+    text-align: left;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-inline: 4rem;
   }
 }
 
