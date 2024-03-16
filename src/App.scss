@@ -1,4 +1,6 @@
-@import "./var.scss";
+@import "./Var";
+
+
 html, body{
     font-family: var(--sans);
     scroll-behavior: smooth;
@@ -15,6 +17,7 @@ html, body{
     max-width:1111px;
     margin-inline:auto;
 }
+
 .main-heading{
     font-size: 32px;
     font-weight: 500;
@@ -25,12 +28,12 @@ html, body{
     }
 }
 
-
 .medium-heading{
     font-size:28px;
     line-height: 48px;
     font-weight: 500;
     letter-spacing: 2px;
+    text-transform: uppercase;
     @include tablet{
         font-size: 40px;
     }
@@ -85,8 +88,11 @@ a{
         }
     }
 }
-section:not(#quality-section){
-    margin-block-end: 120px;
+
+@import "Header";
+
+section{
+    margin-block-end: 100px;
 }
 .radius{
     border-radius: 8px;
@@ -166,109 +172,17 @@ section:not(#quality-section){
         @include tablet{
             flex-direction:row;
             text-align: unset;
+            gap: 2rem;
+        }
+        @include desktop{
+            flex-direction: column;
+            text-align: center;
         }
     }
 }
 
 
-header{
-    position:relative;
-    z-index: 999;
-    .wrapper{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-block: 3rem;
-        .logo-container{
-            width: 200px;
-            img{
-                width: 100%;
-                display:block;
-            }
-        }
-        .burger{
-            cursor:pointer;
-            path{
-                transition: all 0.3s;
-            }
-            &.open{
 
-                path{
-                    
-                    position: relative;
-                    transform-origin: center;
-                    &:nth-of-type(1){
-                        transform:translate(-5px, 6px) rotate(45deg);
-                    }
-                    &:nth-of-type(2){
-                        opacity: 0;
-                        transform:translatex(-15px);
-                    }
-                    &:nth-of-type(3){
-                        transform: translate(-6px, -5px) rotate(-45deg);
-                    }
-                }
-            }
-            // Tablet View
-            @include tablet{
-                display:none;
-            }
-        }
-    }
-}
-nav{
-    position:absolute;
-    background-color: var(--clr-dark-main);
-    left: 0;
-    width: 100%;
-    padding-block: 50px;
-    a{
-        color: var(--clr-light-main);
-        text-transform: uppercase;
-        font-size: 2rem;
-        font-weight: 300;
-        display:block;
-        padding:1rem  2rem;
-        margin-block: 1rem;
-    }
-}
-nav:not(footer nav){    
-    //Nav Behavior
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s;
-    top: 118%;
-    &.open{
-        opacity: 1;
-        top: 100%;
-        pointer-events: auto;
-    }
-
-    //Tab view port
-    @include tablet{
-        position:relative;
-        opacity: 1;
-        pointer-events: auto;
-        background-color:transparent;
-        width: fit-content;
-        left: unset;
-        top: unset;
-        padding-block: 0;
-        ul{
-            list-style: none;
-            display: flex;
-            a{
-                color: var(--clr-dark-main);
-                font-size: 14px;
-                font-weight: normal;
-                padding: 0;
-                padding-inline-start: 2rem;
-                margin: 0;
-            }
-        }
-    }
-
-}
 
 
 /* Start Page Hero Section*/
@@ -293,6 +207,7 @@ nav:not(footer nav){
         }
         figure{
             height: 370px;
+            pointer-events: none;
             img{
                 transform:translateY(-11%);
             }
@@ -302,104 +217,4 @@ nav:not(footer nav){
         }
     }
 }
-
-.call-container{
-    position:relative;
-    top: 160px;
-    .wrapper{
-        background-color: var(--clr-call-main);
-        color:var(--clr-light-main);
-        text-align:center;
-        border-radius: 1rem;
-        padding-block: 63px;
-        padding-inline:25px;
-        background-image:url("./assets/shared/desktop/bg-pattern-call-to-action.svg");
-        background-size: 1490px;
-        background-position:center;
-        .medium-heading{
-            max-width: 300px;
-            margin-inline:auto;
-        }
-        p{
-            margin-block: 38px;
-            max-width: 500px;
-            margin-inline:auto;
-        }
-        a{
-            padding-block: 21px;
-            margin-inline:auto;
-        }
-    }
-}
-
-footer{
-    background-color: var(--clr-dark-main);
-    color: var(--clr-light-main);
-    text-align: center;
-    padding-block-start:250px;
-    padding-block-end:50px;
-    .grid-flex{
-        @include tablet{
-            flex-flow:row wrap;
-            align-items: center;
-            justify-content: space-between;
-            .logo-container{
-                width: 30%;
-                img{
-                    width: 100%;
-                }
-            }
-        }
-    }
-    nav{
-        position:relative;
-        padding-block: unset;
-        width: auto;
-        background-color:revert;
-        border-block-start: 1px solid var(--clr-light-third);
-
-        ul{
-            list-style:none;
-            a{
-                font-size: 18px;
-                margin: 0;
-            }
-           
-        }
-        @include tablet{
-            flex-grow: 1;
-            border-block-start: unset;
-            margin-inline-start: auto;
-            width: fit-content;
-            ul{
-                display:flex;
-                margin-block-end:unset ;
-                a{
-                    font-size: 14px;
-                    white-space: nowrap;
-                    padding: 1rem 0 1rem 3dvb;
-                }
-            }
-        }
-    }
-    .address, .contact{
-        color: var(--clr-light-third);
-    }
-    .social{
-        ul{
-            display:flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-        li{
-            list-style:none;
-            a{
-                color: var(--clr-call-main);
-            }
-        }
-        @include tablet{
-            align-self:flex-end;
-        }
-    }
-}
-
+@import "./Footer";

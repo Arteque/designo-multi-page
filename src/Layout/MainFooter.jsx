@@ -6,6 +6,7 @@ import MainLogo from "../Components/MainLogo"
 import Nav from "../Components/Nav/Nav"
 import Grid from '../Components/Grid'
 import Social from "../Components/Nav/Social"
+
 function MainFooter() {
   return (
     <>  

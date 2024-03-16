@@ -25,8 +25,8 @@ function Home() {
             </figure>
         </Section>
         <Section id="about-section">
-          <Grid >
-            <Card Heading="Web design" linkText="view projects" link="webdesign" bgImg="./assets/home/mobile/image-web-design.jpg"/>
+          <Grid>
+            <Card Heading="Web design" linkText="view projects" link="webdesign" bgImg="./assets/home/mobile/image-web-design.jpg" />
             <Card Heading="App design" linkText="view projects" link="appdesign"/>
             <Card Heading="Graphic design" linkText="view projects" link="graphicdesign"/>
           </Grid>

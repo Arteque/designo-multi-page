@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import SmallHeading from "./SmallHeading"
 import MediumHeading from './MediumHeading'
 import Button from "./Button"
-function Card({ bgImg, Heading, linkText, link, cardtype,detailsCardHeader,detailsCardBodyHeading,detailsCardText}) {
+function Card({ uppercase, bgImg, Heading, linkText, link, cardtype,detailsCardHeader,detailsCardBodyHeading,detailsCardText}) {
 
 
 const [hasLink, setHasLink] = useState(false)
@@ -31,7 +31,7 @@ useEffect(() => {
         </>
     ):(
         <div className={`card-container radius ${bgImg?"bgImg":""}`} style={bgImg?{backgroundImage:`url(${bgImg})`}:null}>
-            <MediumHeading>
+            <MediumHeading >
             {Heading}
             </MediumHeading>
             <Button title={linkText} classname="btn-icon" href={link}>

@@ -4,6 +4,7 @@ import Home from "./Pages/Home"
 import AboutUs from "./Pages/AboutUs"
 import Location from "./Pages/Location"
 import Contact from "./Pages/Contact"
+import NotFound from './Pages/NotFound'
 import {
   BrowserRouter,
   Route,
@@ -17,7 +18,7 @@ function App() {
     <BrowserRouter>
       <MainHeader />
         <Routes>
-            <Route path="/" element={<Home />} />  
+            <Route path="/home" element={<Home />} />  
             <Route path="/ourcompany" element={<AboutUs />} />  
             <Route path="/location" element={<Location />} />  
             <Route path="/contact" element={<Contact />} /> 

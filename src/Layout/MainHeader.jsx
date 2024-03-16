@@ -21,7 +21,7 @@ export default function MainHeader() {
       <Header>
         <Wrapper>
             <div className="logo-container">
-            <Link to="/">
+            <Link to="/home">
                 <MainLogo logoLocation="header" />
             </Link>
             </div>

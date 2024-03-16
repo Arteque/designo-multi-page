@@ -1,0 +1,102 @@
+header{
+    position:relative;
+    z-index: 999;
+    .wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: 3rem;
+        .logo-container{
+            width: 200px;
+            img{
+                width: 100%;
+                display:block;
+            }
+        }
+        .burger{
+            cursor:pointer;
+            path{
+                transition: all 0.3s;
+            }
+            &.open{
+
+                path{
+                    
+                    position: relative;
+                    transform-origin: center;
+                    &:nth-of-type(1){
+                        transform:translate(-5px, 6px) rotate(45deg);
+                    }
+                    &:nth-of-type(2){
+                        opacity: 0;
+                        transform:translatex(-15px);
+                    }
+                    &:nth-of-type(3){
+                        transform: translate(-6px, -5px) rotate(-45deg);
+                    }
+                }
+            }
+            // Tablet View
+            @include tablet{
+                display:none;
+            }
+        }
+    }
+}
+nav{
+    position:absolute;
+    background-color: var(--clr-dark-main);
+    left: 0;
+    width: 100%;
+    padding-block: 50px;
+    a{
+        color: var(--clr-light-main);
+        text-transform: uppercase;
+        font-size: 2rem;
+        font-weight: 300;
+        display:block;
+        padding:1rem  2rem;
+        margin-block: 1rem;
+    }
+}
+nav:not(footer nav){    
+    //Nav Behavior
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+    top: 118%;
+    &.open{
+        opacity: 1;
+        top: 100%;
+        pointer-events: auto;
+    }
+
+    //Tab view port
+    @include tablet{
+        position:relative;
+        opacity: 1;
+        pointer-events: auto;
+        background-color:transparent;
+        width: fit-content;
+        left: unset;
+        top: unset;
+        padding-block: 0;
+        ul{
+            list-style: none;
+            display: flex;
+            margin-block: unset;
+            li{
+                margin-block-end: 0;
+            }
+            a{
+                color: var(--clr-dark-main);
+                font-size: 14px;
+                font-weight: normal;
+                padding: 0;
+                padding-inline-start: 2rem;
+                margin-block: unset;
+            }
+        }
+    }
+
+}

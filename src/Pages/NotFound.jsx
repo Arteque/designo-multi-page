@@ -1,7 +1,7 @@
 import MediumHeading from "../Components/MediumHeading"
 import Wrapper from "../Components/Wrapper"
 
-function NoFound() {
+function NotFound() {
   return (
     <Wrapper>
         <MediumHeading>
@@ -11,4 +11,4 @@ function NoFound() {
   )
 }
 
-export default NoFound
+export default NotFound
