@@ -7,19 +7,23 @@
     .wrapper{
         padding-inline: 1.5rem;
         background-color: var(--clr-call-main);
-        border-radius: 10px 10px 0 0;
+        border-radius: 10px;
         background-image: url("./assets/home/desktop/bg-pattern-hero-home.svg") ;
         background-position:center 30vh;
         background-repeat: no-repeat;
         .content-container{
-            width: 60%;
+            width: 100%;
             margin-inline: auto;
-            display:flex;
-            flex-flow: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            padding-block-start: 100px;
+            
+            padding-block: 100px;
+            padding-inline:2rem;
+            text-align: center;
+            margin-inline:auto;
+            width: fit-content;
+            // min-height: 252px;
+            p{
+                max-width: 386px;
+            }
         }
         .main-heading{
             max-width: 500px;
@@ -36,6 +40,14 @@
             background-image:url("./assets/home/desktop/image-hero-phone.png"), url("./assets/home/desktop/image-hero-phone.png");
             background-position:center 30vh;
             background-repeat: no-repeat;
+            border-radius: 10px 10px 0 0;
+            .content-container{
+                display:flex;
+                flex-flow: column;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+            }
             @include desktop{
                 background-position: 120% 3vh;
                 .content-container{
