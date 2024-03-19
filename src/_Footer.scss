@@ -1,7 +1,6 @@
 
 .call-container{
     position:relative;
-    // top: 160px;
     .wrapper{
         background-color: var(--clr-call-main);
         color:var(--clr-light-main);
@@ -25,6 +24,21 @@
         a{
             padding-block: 21px;
             margin-inline:auto;
+        }
+        @include desktop{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-inline: 93px;
+            p, .medium-heading{
+                width: auto;
+                text-align: left;
+                margin:0;
+                padding-block: 1rem;
+            }
+            a{
+                margin-inline: unset;
+            }
         }
     }
 }

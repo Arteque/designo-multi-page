@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import SmallHeading from "./SmallHeading"
 import MediumHeading from './MediumHeading'
 import Button from "./Button"
-function Card({ uppercase, bgImg, Heading, linkText, link, cardtype,detailsCardHeader,detailsCardBodyHeading,detailsCardText}) {
+function Card({ bgImg, Heading, linkText, link, cardtype,detailsCardHeader,detailsCardBodyHeading,detailsCardText}) {
 
 
 const [hasLink, setHasLink] = useState(false)

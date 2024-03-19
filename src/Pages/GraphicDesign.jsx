@@ -8,7 +8,7 @@ function GraphicDesign() {
               </MainHeading>
               <p>
               We deliver eye-catching branding materials that are 
-tailored to meet your business objectives.
+              tailored to meet your business objectives.
               </p>
         </div>
       </Hero>
@@ -16,4 +16,4 @@ tailored to meet your business objectives.
   )
 }
 
-export default GraphicDesign
+export default GraphicDesign 

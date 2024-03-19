@@ -89,7 +89,7 @@ a{
     }
 }
 
-@import "Header";
+
 
 section{
     margin-block-end: 100px;
@@ -181,7 +181,7 @@ section{
     }
 }
 
-
+@import "./Header";
 
 @import "./Hero";
 
