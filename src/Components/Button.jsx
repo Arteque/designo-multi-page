@@ -1,12 +1,13 @@
+import { Link } from "react-router-dom"
 
 function Button({href, title, classname, target, children}) {
 
   return (
-    <a href={href} 
+    <Link to={href} 
     title={title} 
     className={classname} 
     target={target}
-    >{children}</a>
+    >{children}</Link>
   )
 }
 

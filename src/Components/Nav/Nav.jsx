@@ -3,16 +3,23 @@ import Menu from "./Menu";
 const items = [
     {
         label: 'Our Company',
-        key:'ourcompany'
+        key:'ourcompany',
+        header:true,
+        footer:true,
     },
     {
         label:'Location',
-        key:'location'
+        key:'location',
+        header:true,
+        footer:true,
     },
     {
         label: 'Contact',
-        key: 'contact'
-    }
+        key: 'contact',
+        header:true,
+        footer:true,
+    },
+    
 ]
 
 function Nav({classname}){
@@ -23,7 +30,7 @@ function Nav({classname}){
     const onClick = (e) => {
         setCurrent(e)
     }
-    
+
     return <nav className={classname}>
         <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
     </nav>
