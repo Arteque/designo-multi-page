@@ -5,42 +5,46 @@
     text-align: center;
     overflow: hidden;
     .wrapper{
-        padding-inline: 1.5rem;
+        padding-inline: 30px;
         background-color: var(--clr-call-main);
         border-radius: 10px;
         background-image: url("./assets/home/desktop/bg-pattern-hero-home.svg") ;
         background-position:center 30vh;
         background-repeat: no-repeat;
+        @include tablet{
+            padding-inline: 50px;
+        }
         .content-container{
             width: 100%;
             margin-inline: auto;
-            
             padding-block: 100px;
-            padding-inline:2rem;
             text-align: center;
             margin-inline:auto;
             width: fit-content;
-            // min-height: 252px;
-            p{
-                max-width: 386px;
-            }
-        }
-        .main-heading{
-            max-width: 500px;
         }
     }
+   
 }
 
 .start-main-content{
     #hero-section{
         .wrapper{
-            min-height: 80svh;
+            min-height: 640px;
             overflow:hidden;
             position: relative;
-            background-image:url("./assets/home/desktop/image-hero-phone.png"), url("./assets/home/desktop/image-hero-phone.png");
+            background-image:url("./assets/home/desktop/image-hero-phone.png");
             background-position:center 30vh;
             background-repeat: no-repeat;
             border-radius: 10px 10px 0 0;
+            &::after{
+                content:"";
+                position: absolute;
+                inset:0;
+                background-image: url("./assets/home/desktop/bg-pattern-hero-home.svg");
+                background-repeat: no-repeat;
+                background-size:contain;
+                background-position:right;
+            }
             .content-container{
                 display:flex;
                 flex-flow: column;
@@ -49,10 +53,11 @@
                 gap: 1rem;
             }
             @include desktop{
-                background-position: 120% 3vh;
+                background-position: calc(135% - 100px) top;
+                border-radius: 15px;
                 .content-container{
                     margin-inline: unset;
-                    padding-block-start: 13rem;
+                    padding-block-start: 160px;
                     width: 60%;
                     z-index: 1;
                     text-align: left;
@@ -61,5 +66,53 @@
                 }
             }
         }
+        
     }
+}
+
+ // Aboutus Hero
+ .aboutus{
+    #hero-section{
+        .wrapper{
+            padding-inline: 0;
+            overflow: hidden;
+            @include desktop{
+                min-height: auto;
+                background-position: left bottom;
+                background-size: 55%;
+            }
+            .content-container{
+                padding-inline: 2rem;
+                padding-block-start: 50px;
+            }
+            .media-container{
+                img{
+                    width: 100%;
+                }
+            }
+            background-size: 80%;
+            background-position: center right;
+        }
+        .grid-flex{
+            min-height: 480px;
+            flex-flow: column-reverse;
+            @include desktop{
+                flex-flow: row nowrap;
+                .content-container{
+                    text-align: left;
+                    align-self:center;
+                    padding-block: 0;
+                    padding-inline-start: 100px;
+                }
+                .media-container{
+                    width: 100%;
+                    img{
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }   
 }
