@@ -565,6 +565,13 @@ footer::before {
   background-color: var(--clr-dark-main);
   z-index: -1;
 }
+footer .logo-container {
+  -webkit-margin-before: 1rem;
+          margin-block-start: 1rem;
+}
+footer .logo-container img {
+  width: 200px;
+}
 @media screen and (min-width: 768px) {
   footer .grid-flex {
     -webkit-box-orient: horizontal;
