@@ -30,8 +30,8 @@ function AboutUs() {
           
          </Grid>
       </Hero>
-      <section id="aboutus-section">
-          <div className="wrapper pseudo-block-container">
+      <section id="aboutus-section" className="pseudo-block-container">
+          <div className="wrapper">
              <div className="content">
                 <MediumHeading>
                 World-class talent
@@ -92,9 +92,9 @@ function AboutUs() {
             </div>
            </div>
       </section>
-      <section id="aboutus-section">
+      <section id="deal-section" className="pseudo-block-container">
           <div className="wrapper">
-             <div className="content pseudo-block-container">
+             <div className="content">
                 <MediumHeading>
                 The real deal
                 </MediumHeading>
