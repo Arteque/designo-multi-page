@@ -30,11 +30,8 @@ function AboutUs() {
           
          </Grid>
       </Hero>
-      <Section id="aboutus-section">
-          <div className="flex-container">
-             <div className="block">
-
-             </div>
+      <section id="aboutus-section">
+          <div className="wrapper pseudo-block-container">
              <div className="content">
                 <MediumHeading>
                 World-class talent
@@ -45,7 +42,7 @@ function AboutUs() {
                 </p>
              </div>
           </div>
-      </Section>
+      </section>
       <section id="locations-container">
            <div className="wrapper">
             <div className="card">
@@ -94,6 +91,19 @@ function AboutUs() {
                   </div>
             </div>
            </div>
+      </section>
+      <section id="aboutus-section">
+          <div className="wrapper">
+             <div className="content pseudo-block-container">
+                <MediumHeading>
+                The real deal
+                </MediumHeading>
+                <p>
+                As strategic partners in our clients’ businesses, we are ready to take on any challenge as our own. Solving real problems require empathy and collaboration, and we strive to bring a fresh perspective to every opportunity. We make design and technology more accessible and give you tools to measure success.
+                We are visual storytellers in appealing and captivating ways. By combining business and marketing strategies, we inspire audiences to take action and drive real results.
+                </p>
+             </div>
+          </div>
       </section>
     </Main>
   )
