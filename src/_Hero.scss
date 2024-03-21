@@ -8,7 +8,7 @@
         padding-inline: 30px;
         background-color: var(--clr-call-main);
         border-radius: 10px 10px 0 0;
-        background-image: url("./assets/home/desktop/bg-pattern-hero-home.svg") ;
+        background-image: url("./home/desktop/bg-pattern-hero-home.svg") ;
         background-position:center 30vh;
         background-repeat: no-repeat;
         @include tablet{
@@ -32,7 +32,7 @@
             min-height: 640px;
             overflow:hidden;
             position: relative;
-            background-image:url("./assets/home/desktop/image-hero-phone.png");
+            background-image:url("./home/desktop/image-hero-phone.png");
             background-position:center 30vh;
             background-repeat: no-repeat;
             border-radius: 10px 10px 0 0;
@@ -40,7 +40,7 @@
                 content:"";
                 position: absolute;
                 inset:0;
-                background-image: url("./assets/home/desktop/bg-pattern-hero-home.svg");
+                background-image: url("./home/desktop/bg-pattern-hero-home.svg");
                 background-repeat: no-repeat;
                 background-size:contain;
                 background-position:right;
