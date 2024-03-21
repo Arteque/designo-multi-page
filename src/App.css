@@ -1,6 +1,7 @@
 :root {
   --clr-call-main: #E7816B;
   --clr-call-sub: #FFAD98;
+  --clr-call-third: rgba(93, 2, 2, 0.1);
   --clr-dark-main: #1D1C1E;
   --clr-dark-sub: #333136;
   --clr-light-main: #ffffff;
@@ -671,6 +672,15 @@ footer .social li a {
   -webkit-margin-after: unset;
           margin-block-end: unset;
 }
+@media screen and (min-width: 768px) {
+  .aboutus section#hero-section {
+    -webkit-margin-after: 4rem;
+            margin-block-end: 4rem;
+  }
+  .aboutus section#hero-section .wrapper {
+    border-radius: 10px;
+  }
+}
 
 .pseudo-block-container .wrapper::before {
   content: "";
@@ -678,7 +688,33 @@ footer .social li a {
   height: 320px;
   width: 100%;
   background-color: orange;
-  border-radius: 10px 10px 0 0;
+  border-radius: 0;
+}
+@media screen and (min-width: 768px) {
+  .pseudo-block-container .wrapper::before {
+    border-radius: 10px 10px 0 0;
+  }
+  .pseudo-block-container .wrapper .content {
+    border-radius: 0 0 10px 10px;
+  }
+}
+@media screen and (min-width: 1111px) {
+  .pseudo-block-container .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+  .pseudo-block-container .wrapper::before {
+    height: auto;
+    max-width: unset;
+  }
+  .pseudo-block-container .wrapper .content {
+    width: 100%;
+    max-width: unset;
+  }
 }
 .pseudo-block-container:nth-of-type(2) .wrapper::before {
   background-image: url("./assets/about/mobile/image-world-class-talent.jpg");
@@ -711,18 +747,47 @@ footer .social li a {
   }
 }
 
+.aboutus .wrapper {
+  width: 100%;
+  max-width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .aboutus .wrapper {
+    max-width: 689px;
+  }
+}
+@media screen and (min-width: 1111px) {
+  .aboutus .wrapper {
+    max-width: 1111px;
+  }
+}
 .aboutus .card {
   max-width: 300px;
   margin-inline: auto;
   text-align: center;
+  margin-block: 2rem;
+}
+.aboutus .card .card-header {
+  background-image: url(./assets/shared/desktop/bg-pattern-small-circle.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .aboutus .card .btn-call {
   margin-inline: auto;
 }
+.aboutus .content {
+  padding-inline: 2rem;
+  background-color: var(--clr-call-third);
+  background-image: url(./assets/shared/desktop/bg-pattern-small-circle.svg);
+  background-size: 80%;
+  padding-block: 4rem;
+}
 .aboutus .content h2 {
   text-transform: unset;
   text-align: center;
-  margin-block: 2rem;
+  -webkit-margin-after: 2rem;
+          margin-block-end: 2rem;
   color: var(--clr-call-main);
   font-size: 32px;
 }

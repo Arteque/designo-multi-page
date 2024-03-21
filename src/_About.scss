@@ -1,5 +1,11 @@
 .aboutus section#hero-section{
     margin-block-end: unset;
+    @include tablet{
+        margin-block-end: 4rem;
+        .wrapper{
+            border-radius: 10px;
+        }
+    }
 }
  .pseudo-block-container{ 
     .wrapper{
@@ -9,8 +15,28 @@
         height: 320px;
         width: 100%;
         background-color:orange;
-        border-radius: 10px 10px 0 0;
+        border-radius:  0;
        } 
+       @include tablet{
+            &::before{
+                border-radius: 10px 10px 0 0;
+            }
+            .content{
+                border-radius: 0 0    10px 10px;
+            }
+       }
+       @include desktop{
+        display: flex;
+        align-items: stretch;
+        &::before{
+            height: auto;
+            max-width: unset;
+        }
+        .content{
+            width: 100%;
+            max-width: unset;
+        }
+       }
     }
 
     &:nth-of-type(2){
@@ -21,6 +47,7 @@
                 background-repeat: no-repeat;
                 @include tablet{
                     background-image: url("./assets/about/tablet/image-world-class-talent.jpg");
+                    
                 }
                 @include desktop{
                     background-image: url("./assets/about/desktop/image-world-class-talent.jpg");
@@ -45,19 +72,41 @@
     }
 }
 .aboutus{
+    .wrapper{
+        width: 100%;
+        max-width: 100%;
+        @include tablet{
+            max-width: 689px;
+        }
+        @include desktop{
+            max-width: 1111px;
+        }
+    }
     .card{
         max-width: 300px;
         margin-inline:auto;
         text-align: center;
+        margin-block: 2rem;
+        .card-header{
+            background-image: url(./assets/shared/desktop/bg-pattern-small-circle.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
         .btn-call{
             margin-inline:auto;
         }
     }
     .content{
+        padding-inline: 2rem;
+        background-color: var(--clr-call-third);
+        background-image:url(./assets/shared/desktop/bg-pattern-small-circle.svg) ;
+        background-size: 80%;
+        padding-block: 	4rem;
         h2{
             text-transform: unset;
             text-align: center;
-            margin-block: 2rem;
+            margin-block-end: 2rem;
             color: var(--clr-call-main); 
             font-size: 32px;
          }
