@@ -24,8 +24,18 @@ html, body {
 
 .wrapper {
   width: 90%;
-  max-width: 1111px;
   margin-inline: auto;
+}
+@media screen and (min-width: 768px) {
+  .wrapper {
+    max-width: 689px;
+  }
+}
+@media screen and (min-width: 1111px) {
+  .wrapper {
+    width: auto;
+    max-width: 1111px;
+  }
 }
 
 .main-heading {
@@ -113,8 +123,8 @@ a.btn-icon svg {
 }
 
 section {
-  -webkit-margin-after: 100px;
-          margin-block-end: 100px;
+  -webkit-margin-after: 161px;
+          margin-block-end: 161px;
 }
 
 .radius {
@@ -668,14 +678,17 @@ footer .social li a {
   }
 }
 
+.aboutus {
+  background-image: url("./about/mobile/bg-pattern-hero-about-mobile.svg");
+}
 .aboutus section#hero-section {
   -webkit-margin-after: unset;
           margin-block-end: unset;
 }
 @media screen and (min-width: 768px) {
   .aboutus section#hero-section {
-    -webkit-margin-after: 4rem;
-            margin-block-end: 4rem;
+    -webkit-margin-after: 161px;
+            margin-block-end: 161px;
   }
   .aboutus section#hero-section .wrapper {
     border-radius: 10px;
@@ -709,11 +722,36 @@ footer .social li a {
   }
   .pseudo-block-container .wrapper::before {
     height: auto;
-    max-width: unset;
+    max-width: 476px;
+    border-radius: 10px 0 0 10px;
   }
   .pseudo-block-container .wrapper .content {
     width: 100%;
     max-width: unset;
+    border-radius: 0 10px 10px 0;
+    padding-block: 135px;
+    padding-inline: 95px;
+  }
+  .pseudo-block-container .wrapper .content h2 {
+    text-align: left;
+  }
+  .pseudo-block-container .wrapper .content p {
+    text-align: left;
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1111px) {
+  .pseudo-block-container.pseudo-right .wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .pseudo-block-container.pseudo-right .wrapper::before {
+    border-radius: 0 10px 10px 0;
+  }
+  .pseudo-block-container.pseudo-right .wrapper .content {
+    border-radius: 10px 0 0 10px;
   }
 }
 .pseudo-block-container:nth-of-type(2) .wrapper::before {

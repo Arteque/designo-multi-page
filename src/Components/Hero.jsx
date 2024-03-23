@@ -1,4 +1,5 @@
 import Section from "./Section"
+
 function Hero({children}) {
   return (
     <>

@@ -1,9 +1,12 @@
-.aboutus section#hero-section{
-    margin-block-end: unset;
-    @include tablet{
-        margin-block-end: 4rem;
-        .wrapper{
-            border-radius: 10px;
+.aboutus {
+    background-image:url("./about/mobile/bg-pattern-hero-about-mobile.svg");
+    section#hero-section{
+        margin-block-end: unset;
+        @include tablet{
+            margin-block-end: 161px;
+            .wrapper{
+                border-radius: 10px;
+            }
         }
     }
 }
@@ -30,15 +33,39 @@
         align-items: stretch;
         &::before{
             height: auto;
-            max-width: unset;
+            max-width: 476px;
+            border-radius: 10px 0 0 10px;
         }
         .content{
             width: 100%;
             max-width: unset;
+            border-radius: 0 10px 10px 0;
+            padding-block: 135px;
+            padding-inline: 95px;
+            h2{
+                text-align: left;
+            }
+            p{
+                text-align: left;
+                font-size: 1rem;
+            }
+        }
+        
+       }
+    }
+    &.pseudo-right{
+       .wrapper{
+           @include desktop{   
+            flex-direction: row-reverse;
+            &::before{
+                border-radius: 0 10px 10px 0;
+            }
+            .content{
+                border-radius: 10px 0 0 10px;
+            }
         }
        }
     }
-
     &:nth-of-type(2){
         .wrapper{
             &::before{

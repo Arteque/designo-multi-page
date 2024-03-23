@@ -12,8 +12,14 @@ html, body{
 
 .wrapper{
     width: 90%;
-    max-width:1111px;
     margin-inline:auto;
+    @include tablet{
+        max-width: 689px;
+    }
+    @include desktop{
+        width: auto;
+        max-width:1111px;
+    }
 }
 
 .main-heading{
@@ -90,7 +96,7 @@ a{
 
 
 section{
-    margin-block-end: 100px;
+    margin-block-end: 161px;
 }
 .radius{
     border-radius: 8px;
