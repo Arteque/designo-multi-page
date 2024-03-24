@@ -101,13 +101,7 @@
 .aboutus{
     .wrapper{
         width: 100%;
-        max-width: 100%;
-        @include tablet{
-            max-width: 689px;
-        }
-        @include desktop{
-            max-width: 1111px;
-        }
+        // max-width: 100%;
     }
     .card{
         max-width: 300px;

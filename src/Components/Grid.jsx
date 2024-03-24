@@ -16,10 +16,7 @@ function Grid({children, grid, gridFlex }) {
 
 
   return (
-    <div className={classname}
-      grid={grid}
-      gridFlex={gridFlex}
-    >
+    <div className={classname}>
         {children}
     </div>
   )

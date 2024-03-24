@@ -3,7 +3,9 @@ html, body{
     font-family: var(--sans);
     scroll-behavior: smooth;
 }
-
+p,input,textarea,button{
+    font-family: var(--sans);
+}
 *, *::before, *::after{
     margin:0;
     padding:0;
@@ -13,6 +15,9 @@ html, body{
 .wrapper{
     width: 90%;
     margin-inline:auto;
+    &.--full-width{
+        width: 100%;
+    }
     @include tablet{
         max-width: 689px;
     }
@@ -57,10 +62,12 @@ p,ul,input,li{
     line-height:26px;
     margin-block-end: 19px;
 }
-a{
+a, button{
     text-decoration:none;
     font-weight: 500;
     letter-spacing: 1px;
+    border: unset;
+    cursor: pointer;
     &.btn-call{
         display:block;
         text-transform: uppercase;
@@ -185,6 +192,13 @@ section{
     }
 }
 
+//If no call after is used. Hide the call-cntainer
+.no-call-after{
+    & + .call-container{
+        display:none;   
+    }
+}
+
 @import "./Header";
 
 @import "./Hero";
@@ -192,3 +206,5 @@ section{
 @import "./Footer";
 
 @import "./About";
+
+@import "./Form";

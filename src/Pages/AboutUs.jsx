@@ -3,6 +3,9 @@ import MainHeading from "../Components/MainHeading"
 import MediumHeading from "../Components/MediumHeading"
 import SmallHeading from '../Components/SmallHeading'
 import Button from '../Components/Button'
+
+
+
 function AboutUs() {
   return (
     <main className="sub-page aboutus">
@@ -20,8 +23,8 @@ function AboutUs() {
               
               <div className="media-container">
               <picture>
-                  <source media="(min-width: 1111px)" srcset="./assets/about/desktop/image-about-hero.jpg" />
-                  <source media="(min-width: 768px)" srcset="./assets/about/tablet/image-about-hero.jpg" />
+                  <source media="(min-width: 1111px)" srcSet="./assets/about/desktop/image-about-hero.jpg" />
+                  <source media="(min-width: 768px)" srcSet="./assets/about/tablet/image-about-hero.jpg" />
                   <img src="./assets/about/mobile/image-about-hero.jpg" alt="About Us" />
               </picture>
               </div>

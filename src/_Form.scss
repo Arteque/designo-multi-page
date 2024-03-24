@@ -1,0 +1,75 @@
+form{
+    padding-inline: 2rem;
+    &:invalid{
+        background-color:red;
+    }
+    button{
+        margin-inline:auto;
+        font-weight: bolder;
+        color: var(--clr-dark-main);
+    }
+    > div:not(.call-container){
+        position:relative;
+        &::after{
+            content:"";
+            position:absolute;
+            left: 0;
+            bottom: 0;
+            height: 1px;
+            width: 100%;
+            background-color: var(--clr-light-main);
+            z-index: 100;
+            transition: all .3s;
+        }
+    }
+    .infos{
+        position:absolute;
+        right: 0;
+        top: 50%;
+        transform:translateY(-50%);
+        right: 1rem;
+        display: flex;
+        gap: .5rem;
+        align-items: center;
+        font-size: .9rem;
+    }
+}
+label{
+    display: block;
+    width: 100%;
+    text-align: left;
+    color: var(--clr-light-sub);
+}
+input, textarea{
+    background-color:transparent;
+    border: unset;
+    // border-block-end: 1px solid var(--clr-light-sub);
+    position:relative;
+    display: block;
+    width: 100%;
+    margin-block-end: 2rem;
+    color: var(--clr-light-100);
+    transition: all 0.2s;
+    font-size: 15px;
+    font-weight: 600;
+    
+    &::placeholder{
+        color: var(--clr-light-main);
+        
+    }
+    &:focus{
+        outline: unset;   
+        & + ::after{
+            height: 3px;
+        }
+    }
+}
+
+input{
+    padding: 3rem 1rem;
+}
+textarea{
+    padding: 1rem 1rem;
+    height: 100px;
+    resize: vertical;
+}

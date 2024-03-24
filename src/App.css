@@ -15,6 +15,10 @@ html, body {
   scroll-behavior: smooth;
 }
 
+p, input, textarea, button {
+  font-family: var(--sans);
+}
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -25,6 +29,9 @@ html, body {
 .wrapper {
   width: 90%;
   margin-inline: auto;
+}
+.wrapper.--full-width {
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .wrapper {
@@ -82,12 +89,14 @@ p, ul, input, li {
           margin-block-end: 19px;
 }
 
-a {
+a, button {
   text-decoration: none;
   font-weight: 500;
   letter-spacing: 1px;
+  border: unset;
+  cursor: pointer;
 }
-a.btn-call {
+a.btn-call, button.btn-call {
   display: block;
   text-transform: uppercase;
   padding: 1rem 2rem;
@@ -98,26 +107,26 @@ a.btn-call {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-a.--on-dark {
+a.--on-dark, button.--on-dark {
   background-color: var(--clr-light-main);
   color: var(--clr-dark-main);
 }
-a.--on-dark:hover {
+a.--on-dark:hover, button.--on-dark:hover {
   background-color: var(--clr-light-sub);
 }
-a.--on-light {
+a.--on-light, button.--on-light {
   background-color: var(--clr-call-main);
   color: var(--clr-light-main);
 }
-a.--on-light:hover {
+a.--on-light:hover, button.--on-light:hover {
   background-color: var(--clr-call-sub);
 }
-a.btn-icon {
+a.btn-icon, button.btn-icon {
   color: var(--clr-light-main);
   text-transform: uppercase;
   letter-spacing: 5px;
 }
-a.btn-icon svg {
+a.btn-icon svg, button.btn-icon svg {
   -webkit-margin-start: 1rem;
           margin-inline-start: 1rem;
 }
@@ -247,6 +256,10 @@ section {
             flex-direction: column;
     text-align: center;
   }
+}
+
+.no-call-after + .call-container {
+  display: none;
 }
 
 header {
@@ -450,28 +463,28 @@ nav:not(footer nav).open {
   }
 }
 
-.aboutus #hero-section .wrapper {
+.sub-page #hero-section .wrapper {
   padding-inline: 0;
   overflow: hidden;
   background-size: 80%;
   background-position: center right;
 }
 @media screen and (min-width: 1111px) {
-  .aboutus #hero-section .wrapper {
+  .sub-page #hero-section .wrapper {
     min-height: auto;
     background-position: left bottom;
     background-size: 55%;
   }
 }
-.aboutus #hero-section .wrapper .content-container {
+.sub-page #hero-section .wrapper .content-container {
   padding-inline: 2rem;
   -webkit-padding-before: 50px;
           padding-block-start: 50px;
 }
-.aboutus #hero-section .wrapper .media-container img {
+.sub-page #hero-section .wrapper .media-container img {
   width: 100%;
 }
-.aboutus #hero-section .grid-flex {
+.sub-page #hero-section .grid-flex {
   min-height: 480px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: reverse;
@@ -479,13 +492,13 @@ nav:not(footer nav).open {
           flex-flow: column-reverse;
 }
 @media screen and (min-width: 1111px) {
-  .aboutus #hero-section .grid-flex {
+  .sub-page #hero-section .grid-flex {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap;
   }
-  .aboutus #hero-section .grid-flex .content-container {
+  .sub-page #hero-section .grid-flex .content-container {
     text-align: left;
     -ms-flex-item-align: center;
         align-self: center;
@@ -493,10 +506,10 @@ nav:not(footer nav).open {
     -webkit-padding-start: 100px;
             padding-inline-start: 100px;
   }
-  .aboutus #hero-section .grid-flex .media-container {
+  .sub-page #hero-section .grid-flex .media-container {
     width: 100%;
   }
-  .aboutus #hero-section .grid-flex .media-container img {
+  .sub-page #hero-section .grid-flex .media-container img {
     height: 100%;
     width: 100%;
     -o-object-fit: cover;
@@ -787,17 +800,6 @@ footer .social li a {
 
 .aboutus .wrapper {
   width: 100%;
-  max-width: 100%;
-}
-@media screen and (min-width: 768px) {
-  .aboutus .wrapper {
-    max-width: 689px;
-  }
-}
-@media screen and (min-width: 1111px) {
-  .aboutus .wrapper {
-    max-width: 1111px;
-  }
 }
 .aboutus .card {
   max-width: 300px;
@@ -832,4 +834,100 @@ footer .social li a {
 .aboutus .content p {
   text-align: center;
   font-size: 15px;
+}
+
+form {
+  padding-inline: 2rem;
+}
+form:invalid {
+  background-color: red;
+}
+form button {
+  margin-inline: auto;
+  font-weight: bolder;
+  color: var(--clr-dark-main);
+}
+form > div:not(.call-container) {
+  position: relative;
+}
+form > div:not(.call-container)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  background-color: var(--clr-light-main);
+  z-index: 100;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+form .infos {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.9rem;
+}
+
+label {
+  display: block;
+  width: 100%;
+  text-align: left;
+  color: var(--clr-light-sub);
+}
+
+input, textarea {
+  background-color: transparent;
+  border: unset;
+  position: relative;
+  display: block;
+  width: 100%;
+  -webkit-margin-after: 2rem;
+          margin-block-end: 2rem;
+  color: var(--clr-light-100);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  font-size: 15px;
+  font-weight: 600;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: var(--clr-light-main);
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: var(--clr-light-main);
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: var(--clr-light-main);
+}
+input::-ms-input-placeholder, textarea::-ms-input-placeholder {
+  color: var(--clr-light-main);
+}
+input::placeholder, textarea::placeholder {
+  color: var(--clr-light-main);
+}
+input:focus, textarea:focus {
+  outline: unset;
+}
+input:focus + ::after, textarea:focus + ::after {
+  height: 3px;
+}
+
+input {
+  padding: 3rem 1rem;
+}
+
+textarea {
+  padding: 1rem 1rem;
+  height: 100px;
+  resize: vertical;
 }/*# sourceMappingURL=App.css.map */
