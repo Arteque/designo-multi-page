@@ -76,6 +76,7 @@
         .wrapper{
             padding-inline: 0;
             overflow: hidden;
+            padding-block: 70px;
             @include desktop{
                 min-height: auto;
                 background-position: left bottom;
@@ -95,7 +96,13 @@
         }
         .grid-flex{
             min-height: 480px;
-            flex-flow: column-reverse;
+            flex-flow: column;
+            &.--row-reverse{
+                flex-direction: row-reverse;
+            }
+            &.--column-reverse{
+                flex-direction: column-reverse;
+            }
             @include desktop{
                 flex-flow: row nowrap;
                 .content-container{

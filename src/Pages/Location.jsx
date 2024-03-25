@@ -9,7 +9,7 @@ import Form from '../Components/Form/Form'
     <main className="sub-page location no-call-after">
         <section id="hero-section">
             <div className="wrapper --full-width">
-                <Grid gridFlex={true}>
+                <div className="grid-flex">
                       <div className="content-container">
                           <MainHeading>
                              Contact Us
@@ -21,7 +21,7 @@ import Form from '../Components/Form/Form'
                       <div className="media-container">
                          <Form />
                       </div>
-                </Grid>
+                </div>
             </div>
         </section>
     </main>

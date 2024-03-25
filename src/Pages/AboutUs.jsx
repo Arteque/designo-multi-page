@@ -11,7 +11,7 @@ function AboutUs() {
     <main className="sub-page aboutus">
       <section id="hero-section">
          <div className="wrapper">
-            <Grid gridFlex={true}>
+            <div  className="grid-flex --column-reverse">
               <div className="content-container">
                   <MainHeading>
                         About us
@@ -29,7 +29,7 @@ function AboutUs() {
               </picture>
               </div>
               
-            </Grid>
+            </div>
          </div>
       </section>
       <section id="aboutus-section" className="pseudo-block-container pseudo-left">
