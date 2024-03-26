@@ -4,12 +4,6 @@ import Input from "./Input"
 function Form() {
 
     
-  const [info, setInfo] = useState(false)
-
-  const checkInput = (event) => {
-    let inputLength = event.target.value.length    
-    inputLength === 0 ? setInfo(true) : setInfo(false)
- }
 
 
  const formInputs = [
@@ -46,6 +40,13 @@ function Form() {
       placeholder:"Your Message",
     },
  ]
+ const [info, setInfo] = useState(false)
+
+ const checkInput = (event) => {
+   let inputLength = event.target.value    
+   console.log(inputLength)
+   inputLength == "" ? setInfo(true) : setInfo(false)
+}
 
 
  const handleSubmit = (e) => {
@@ -58,15 +59,16 @@ function Form() {
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
         {
-            formInputs.map((input,  index) => {
+            formInputs.map((input) => {
             return <Input 
+            info={info}
             key={input.id} 
             inputTag={input.tag} 
             inputName={input.name} 
             inputType={input.type} 
             placeholder={input.placeholder} 
             required={input.required}
-            checkInput={checkInput}
+            checkInput={(e) => checkInput}
             />
             })
         }

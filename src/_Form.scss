@@ -1,9 +1,16 @@
 form{
     padding-inline: 2rem;
+    @include desktop{
+        padding-inline: unset;
+        padding-inline-end: 100px;
+    }
     button{
         margin-inline:auto;
         font-weight: bolder;
         color: var(--clr-dark-main);
+        @include tablet{
+            margin-inline-end:unset;
+        }
     }
     > div:not(.call-container){
         position:relative;
@@ -63,7 +70,7 @@ input, textarea{
 }
 
 input{
-    padding: 3rem 1rem;
+    padding: 1rem;
 }
 textarea{
     padding: 1rem 1rem;

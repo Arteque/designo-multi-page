@@ -8,16 +8,17 @@
         padding-inline: 30px;
         background-color: var(--clr-call-main);
         border-radius: 10px 10px 0 0;
-        background-image: url("./home/desktop/bg-pattern-hero-home.svg") ;
+        background-image: url("./assets/home/desktop/bg-pattern-hero-home.svg") ;
         background-position:center 30vh;
         background-repeat: no-repeat;
+        
         @include tablet{
             padding-inline: 50px;
         }
         .content-container{
             width: 100%;
             margin-inline: auto;
-            padding-block: 100px;
+            // padding-block: 100px;
             text-align: center;
             margin-inline:auto;
             width: fit-content;
@@ -32,7 +33,7 @@
             min-height: 640px;
             overflow:hidden;
             position: relative;
-            background-image:url("./home/desktop/image-hero-phone.png");
+            background-image:url("./assets/home/desktop/image-hero-phone.png");
             background-position:center 30vh;
             background-repeat: no-repeat;
             border-radius: 10px 10px 0 0;
@@ -40,7 +41,7 @@
                 content:"";
                 position: absolute;
                 inset:0;
-                background-image: url("./home/desktop/bg-pattern-hero-home.svg");
+                background-image: url("./assets/home/desktop/bg-pattern-hero-home.svg");
                 background-repeat: no-repeat;
                 background-size:contain;
                 background-position:right;
@@ -76,15 +77,16 @@
         .wrapper{
             padding-inline: 0;
             overflow: hidden;
-            padding-block: 70px;
+            padding-block: 100px;
             @include desktop{
                 min-height: auto;
                 background-position: left bottom;
                 background-size: 55%;
+                border-radius: 10px;
             }
             .content-container{
                 padding-inline: 2rem;
-                padding-block-start: 50px;
+                // padding-block-start: 50px;
             }
             .media-container{
                 img{
@@ -105,6 +107,14 @@
             }
             @include desktop{
                 flex-flow: row nowrap;
+
+                &.--row-reverse{
+                    flex-direction: row;
+                }
+                &.--column-reverse{
+                    flex-direction: row;
+                }
+
                 .content-container{
                     text-align: left;
                     align-self:center;
@@ -119,6 +129,7 @@
                         object-fit: cover;
                     }
                 }
+
             }
         }
     }   

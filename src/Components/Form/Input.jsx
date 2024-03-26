@@ -1,22 +1,8 @@
 import { useEffect, useState } from "react"
 import Info from "./Info"
 
-function Input({inputTag, inputName, inputType, inputValue, placeholder,required,  ...props}) {
+function Input({info, inputTag, inputName, inputType, inputValue, placeholder,required, checkInput, ...props}) {
 
-const [value, setValue] = useState("")
-const [info, setInfo] = useState(false)
-
-
-const checkInput = (event) => {
-
-    setValue(event.target.value)
-
-    if(value.length == 0) {
-        setInfo(true)
-    }else{
-        setInfo(false)
-    }
-}
 
   return (
     <div className={inputName}>

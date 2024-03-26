@@ -261,6 +261,45 @@ section {
 .no-call-after + .call-container {
   display: none;
 }
+.no-call-after ~ footer::before {
+  display: none;
+}
+
+.card {
+  max-width: 300px;
+  margin-inline: auto;
+  text-align: center;
+  margin-block: 2rem;
+}
+.card .card-header {
+  background-image: url(./assets/shared/desktop/bg-pattern-small-circle.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.card .btn-call {
+  margin-inline: auto;
+}
+
+.content {
+  padding-inline: 2rem;
+  background-color: var(--clr-call-third);
+  background-image: url(./assets/shared/desktop/bg-pattern-small-circle.svg);
+  background-size: 80%;
+  padding-block: 4rem;
+}
+.content h2 {
+  text-transform: unset;
+  text-align: center;
+  -webkit-margin-after: 2rem;
+          margin-block-end: 2rem;
+  color: var(--clr-call-main);
+  font-size: 32px;
+}
+.content p {
+  text-align: center;
+  font-size: 15px;
+}
 
 header {
   position: relative;
@@ -390,7 +429,7 @@ nav:not(footer nav).open {
   padding-inline: 30px;
   background-color: var(--clr-call-main);
   border-radius: 10px 10px 0 0;
-  background-image: url("./home/desktop/bg-pattern-hero-home.svg");
+  background-image: url("./assets/home/desktop/bg-pattern-hero-home.svg");
   background-position: center 30vh;
   background-repeat: no-repeat;
 }
@@ -402,7 +441,6 @@ nav:not(footer nav).open {
 #hero-section .wrapper .content-container {
   width: 100%;
   margin-inline: auto;
-  padding-block: 100px;
   text-align: center;
   margin-inline: auto;
   width: -webkit-fit-content;
@@ -414,7 +452,7 @@ nav:not(footer nav).open {
   min-height: 640px;
   overflow: hidden;
   position: relative;
-  background-image: url("./home/desktop/image-hero-phone.png");
+  background-image: url("./assets/home/desktop/image-hero-phone.png");
   background-position: center 30vh;
   background-repeat: no-repeat;
   border-radius: 10px 10px 0 0;
@@ -423,7 +461,7 @@ nav:not(footer nav).open {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("./home/desktop/bg-pattern-hero-home.svg");
+  background-image: url("./assets/home/desktop/bg-pattern-hero-home.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;
@@ -466,7 +504,7 @@ nav:not(footer nav).open {
 .sub-page #hero-section .wrapper {
   padding-inline: 0;
   overflow: hidden;
-  padding-block: 70px;
+  padding-block: 100px;
   background-size: 80%;
   background-position: center right;
 }
@@ -475,12 +513,11 @@ nav:not(footer nav).open {
     min-height: auto;
     background-position: left bottom;
     background-size: 55%;
+    border-radius: 10px;
   }
 }
 .sub-page #hero-section .wrapper .content-container {
   padding-inline: 2rem;
-  -webkit-padding-before: 50px;
-          padding-block-start: 50px;
 }
 .sub-page #hero-section .wrapper .media-container img {
   width: 100%;
@@ -510,6 +547,18 @@ nav:not(footer nav).open {
     -webkit-box-direction: normal;
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap;
+  }
+  .sub-page #hero-section .grid-flex.--row-reverse {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .sub-page #hero-section .grid-flex.--column-reverse {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
   .sub-page #hero-section .grid-flex .content-container {
     text-align: left;
@@ -811,51 +860,39 @@ footer .social li a {
   }
 }
 
-.aboutus .wrapper {
+.aboutus #hero-section .wrapper {
   width: 100%;
+  padding-block: unset;
+  -webkit-padding-after: 100px;
+          padding-block-end: 100px;
 }
-.aboutus .card {
-  max-width: 300px;
-  margin-inline: auto;
-  text-align: center;
-  margin-block: 2rem;
-}
-.aboutus .card .card-header {
-  background-image: url(./assets/shared/desktop/bg-pattern-small-circle.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.aboutus .card .btn-call {
-  margin-inline: auto;
-}
-.aboutus .content {
-  padding-inline: 2rem;
-  background-color: var(--clr-call-third);
-  background-image: url(./assets/shared/desktop/bg-pattern-small-circle.svg);
-  background-size: 80%;
-  padding-block: 4rem;
-}
-.aboutus .content h2 {
-  text-transform: unset;
-  text-align: center;
-  -webkit-margin-after: 2rem;
-          margin-block-end: 2rem;
-  color: var(--clr-call-main);
-  font-size: 32px;
-}
-.aboutus .content p {
-  text-align: center;
-  font-size: 15px;
+@media screen and (min-width: 1111px) {
+  .aboutus #hero-section .wrapper {
+    -webkit-padding-after: unset;
+            padding-block-end: unset;
+  }
 }
 
 form {
   padding-inline: 2rem;
 }
+@media screen and (min-width: 1111px) {
+  form {
+    padding-inline: unset;
+    -webkit-padding-end: 100px;
+            padding-inline-end: 100px;
+  }
+}
 form button {
   margin-inline: auto;
   font-weight: bolder;
   color: var(--clr-dark-main);
+}
+@media screen and (min-width: 768px) {
+  form button {
+    -webkit-margin-end: unset;
+            margin-inline-end: unset;
+  }
 }
 form > div:not(.call-container) {
   position: relative;
@@ -933,7 +970,7 @@ input:focus + ::after, textarea:focus + ::after {
 }
 
 input {
-  padding: 3rem 1rem;
+  padding: 1rem;
 }
 
 textarea {

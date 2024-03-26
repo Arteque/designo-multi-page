@@ -99,42 +99,15 @@
     }
 }
 .aboutus{
+   #hero-section{
     .wrapper{
         width: 100%;
         // max-width: 100%;
-    }
-    .card{
-        max-width: 300px;
-        margin-inline:auto;
-        text-align: center;
-        margin-block: 2rem;
-        .card-header{
-            background-image: url(./assets/shared/desktop/bg-pattern-small-circle.svg);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-        .btn-call{
-            margin-inline:auto;
+        padding-block: unset;
+        padding-block-end: 100px;
+        @include desktop{
+            padding-block-end: unset;
         }
     }
-    .content{
-        padding-inline: 2rem;
-        background-color: var(--clr-call-third);
-        background-image:url(./assets/shared/desktop/bg-pattern-small-circle.svg) ;
-        background-size: 80%;
-        padding-block: 	4rem;
-        h2{
-            text-transform: unset;
-            text-align: center;
-            margin-block-end: 2rem;
-            color: var(--clr-call-main); 
-            font-size: 32px;
-         }
-         p{
-            text-align: center;
-            font-size: 15px;
-         }
-    }
-
+   }
 }
